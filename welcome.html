@@ -1,0 +1,270 @@
+<HTML>
+<HEAD>
+
+<TITLE>Oracle8i Enterprise Edition</TITLE>
+<SCRIPT LANGUAGE="Javascript">
+
+<!--// Hide from other browsers
+
+   browserName = navigator.appName;
+   browserVer = parseInt(navigator.appVersion);
+   version = ""
+
+   if(browserName == "Netscape" && browserVer >= 3)
+      version ="n3";
+   else if(browserName == "Netscape" && browserVer ==2)
+      version ="n2";
+   else if(browserName == "Microsoft Internet Explorer" && browserVer == 4)
+      version = "e4";
+   else if(browserName == "Microsoft Internet Explorer" && browserVer >=2)
+      version ="e2";
+
+
+   // Create the image objects for the page
+
+   if(version == "n3" || version == "e4")
+   {
+      // In general, images which are displayed in non-highlighted mode will have a 'Nh' suffix.
+      // Images which are displayed in highlighted mode have an 'H' suffix
+      whatsNewButtonNh = new Image(129, 28);
+      whatsNewButtonNh.src = "doc/images/whatsNewButton.gif";
+
+      whatsNewButtonH = new Image(129, 28);
+      whatsNewButtonH.src = "doc/images/whatsNewButton_h.gif";
+
+      readmeButtonNh = new Image(129, 28);
+      readmeButtonNh.src = "doc/images/readmeButton.gif";
+
+      readmeButtonH = new Image(129, 28);
+      readmeButtonH.src = "doc/images/readmeButton_h.gif";
+
+      docButtonNh = new Image(129, 28);
+      docButtonNh.src = "doc/images/docButton.gif";
+
+      docButtonH = new Image(129, 28);
+      docButtonH.src = "doc/images/docButton_h.gif";
+
+      relnoteButtonNh = new Image(129, 28);
+      relnoteButtonNh.src = "doc/images/relnoteButton.gif";
+
+      relnoteButtonH = new Image(129, 28);
+      relnoteButtonH.src = "doc/images/relnoteButton_h.gif";
+
+      oracleHomeIconNh = new Image(80, 55);
+      oracleHomeIconNh.src = "doc/images/wOHomeIcon.gif";
+
+      oracleHomeIconH = new Image(80, 55);
+      oracleHomeIconH.src = "doc/images/wOHomeIcon_a.gif";
+
+      supportIconNh = new Image(80, 55);
+      supportIconNh.src = "doc/images/wSupportIcon.gif";
+
+      supportIconH = new Image(80, 55);
+      supportIconH.src = "doc/images/wSupportIcon_a.gif";
+
+      //Whew!
+   }
+
+
+   // This function does a graphic rollover, activating the image that is passed as an argument
+   // It takes the base image name and adds the 'H' to it to display the activated version of the image
+   function activate(imgName)
+   {
+      if(document.images != null)
+      {
+         if( version == "n3" || version == "e4")
+         {
+            imgAct = eval(imgName + "H.src");
+            document [imgName].src = imgAct;
+         }
+      }
+   }
+
+   // This function does a graphic rollover, deactivating the image that is passed as an argument
+   // It takes the base image name and adds the 'Nh' to it to display the activated version of the image
+   function deActivate(imgName)
+   {
+      if(document.images != null)
+      {
+         if( version == "n3" || version == "e4")
+         {
+            imgDeAct = eval(imgName + "Nh.src");
+            document [imgName].src = imgDeAct;
+         }
+      }
+   }
+
+   // These functions take care of changing the status message on the browser
+   function changeStatus(statusMsg)
+   {
+      if(version == "n3" || version == "e4")
+      {
+         if(statusMsg == null)
+            statusMsg="";
+         if(statusMsg != '')
+            message(statusMsg);
+      }
+   }
+
+   function message(txt)
+   {
+      window.status = txt;
+      setTimeout("remove()",1000);
+   }
+
+   function remove()
+   {
+     window.status="";
+   }
+
+
+   // This function plays a sound when called from the script.
+   // Sound commented out to accomodate machines without sound support.
+   function playSound()
+   {
+      if(version == "n3")
+      {
+         //document.mouseOverSound.play(false, 'autorun/res/sounds/wButton.wav');
+      }
+   }
+
+
+//-->
+
+</SCRIPT>
+
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<!-- Embed the sound to be played onMouseOver
+<EMBED SRC="autorun/res/sounds/click.wav" AUTOSTART=FALSE HIDDEN=TRUE NAME="mouseOverSound" MASTERSOUND>
+Embedded ound commented out-->
+
+<table border="0" cellpadding="0" cellspacing="0" width="550">
+    <tr>
+        <td width="390"><img
+
+        src="doc/images/wBanner.gif"
+        align="top" width="110" height="55"></td>
+        <td><a href="http://www.oracle.com"
+                onmouseover="activate('oracleHomeIcon');return true;"
+                onmouseout="deActivate('oracleHomeIcon');"><img
+
+        src="doc/images/wOHomeIcon.gif"
+        align="top" border="0" width="80" height="55"
+        name="oracleHomeIcon"></a></td>
+        <td><a href="http://www.oracle.com/support"
+                onmouseover="activate('supportIcon');return true;"
+                onmouseout="deActivate('supportIcon');"><img
+
+        src="doc/images/wSupportIcon.gif"
+        align="top" border="0" width="80" height="55"
+        name="supportIcon"></a></td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="550">
+    <tr>
+        <td><img
+
+        src="doc/images/wTitleEE.gif"
+        align="top" width="481" height="52"></td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td><img
+
+        src="doc/images/wMain_left.gif"
+        align="top" width="56" height="335"></td>
+        <td><table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td><img
+
+                src="doc/images/wMain_aboveButtons.gif"
+                align="top" width="129" height="57"></td>
+            </tr>
+            <tr>
+                <td><a
+
+                href="doc/8iR3.pdf"
+                onmouseover="activate('whatsNewButton');changeStatus('New Features in Oracle8i Enterprise Edition');
+                              playSound();return true;"
+                onmouseout="deActivate('whatsNewButton');changeStatus('')"><img
+
+                src="doc/images/whatsNewButton.gif"
+                align="top" border="0" width="129" height="28"
+                name="whatsNewButton"></a></td>
+            </tr>
+            <tr>
+                <td><img
+
+                src="doc/images/wMain_btwWhatsNewData.gif"
+                align="top" width="129" height="9"></td>
+            </tr>
+            <tr>
+                <td><a
+
+                href="doc/readmes/readmes.html"
+                onmouseover="activate('readmeButton');changeStatus('Product Readmes');
+                              playSound();return true;"
+                onmouseout="deActivate('readmeButton');changeStatus('');return true;"><img
+
+                src="doc/images/readmeButton.gif"
+                align="top" border="0" width="129" height="28"
+                name="readmeButton"></a></td>
+            </tr>
+            <tr>
+                <td><img
+
+                src="doc/images/wMain_btwDataDoc.gif"
+                align="top" width="129" height="9"></td>
+            </tr>
+            <tr>
+                <td><a
+
+                href="doc/index.htm"
+                onmouseover="activate('docButton');changeStatus('Oracle Documentation');
+                              playSound();return true;"
+                onmouseout="deActivate('docButton');changeStatus('');return true;"><img
+
+                src="doc/images/docButton.gif"
+                align="top" border="0" width="129" height="28"
+                name="docButton"></a></td>
+            </tr>
+            <tr>
+                <td><img
+
+                src="doc/images/wMain_btwDocRelnote.gif"
+                align="top" width="129" height="9"></td>
+            </tr>
+            <tr>
+                <td><a
+
+                href="doc/readmedoc.htm"
+                onmouseover="activate('relnoteButton');changeStatus('Oracle8i Enterprise Edition Release Notes');
+                           playSound();return true;"
+                onmouseout="deActivate('relnoteButton');changeStatus('');return true;"><img
+
+                src="doc/images/relnoteButton.gif"
+                align="top" border="0" width="129" height="28"
+                name="relnoteButton"></a></td>
+            </tr>
+            <tr>
+                <td><img
+
+                src="doc/images/wMain_belowButtons.gif"
+                align="top" width="129" height="139"></td>
+            </tr>
+        </table>
+        </td>
+        <td><img
+
+        src="doc/images/wMain_right.gif"
+        align="top" width="296" height="335"></td>
+    </tr>
+</table>
+
+</BODY>
+</HTML>
